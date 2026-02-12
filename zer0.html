@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One Call Solutions</title>
+
+<link rel="icon" href="https://onecallsolutionteghra.github.io/onecallsolution/logo.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- shop -->
+
+<script src="products.js"></script>
+
+<!-- home -->
+
+<style>
+:root{
+  --bg:#f6f6f7;
+  --surface:#ffffff;
+  --text:#111111;
+  --muted:#6d6d6d;
+  --primary:#000000;
+  --accent:#1a1a1a;
+  --radius:18px;
+}
+
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+/* REMOVE OLD MANGA BACKGROUND */
+.bg{display:none}
+
+
+/* HERO SECTION */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:140px 20px 80px;
+  text-align:center;
+}
+
+.hero-panel{
+  max-width:900px;
+}
+
+.hero h1{
+  font-size:64px;
+  font-weight:800;
+  letter-spacing:-1px;
+  line-height:1.1;
+}
+
+.hero p{
+  margin-top:24px;
+  font-size:20px;
+  color:var(--muted);
+}
+
+.business-number{
+  margin-top:16px;
+  font-weight:600;
+  font-size:18px;
+}
+
+/* CTA BUTTON WRAP */
+.cta-wrap{
+  margin-top:40px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+/* BASE BUTTON */
+.cta{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:180px;
+  height:52px;
+  padding:0 28px;
+  border-radius:999px;
+  font-size:16px;
+  font-weight:600;
+  text-decoration:none;
+  cursor:pointer;
+  transition:all .25s ease;
+  border:1px solid transparent;
+  color: #000;
+  border:1px solid #bbb;
+}
+
+/* PRIMARY BUTTON */
+.cta.primary{
+  background: #000;
+  color:#fff;
+}
+
+.cta.primary:hover{
+  background:#222;
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+/* SECONDARY BUTTON */
+.cta.secondary{
+  background:#fff;
+  border:1px solid #ddd;
+  color:#000;
+}
+
+.cta.secondary:hover{
+  background:#f3f3f3;
+  border-color:#bbb;
+  transform:translateY(-2px);
+}
+
+/* ACTIVE CLICK EFFECT */
+.cta:active{
+  transform:translateY(0);
+  box-shadow:none;
+}
+
+/* MOBILE FIX */
+@media(max-width:600px){
+  .cta{
+    width:100%;
+    max-width:320px;
+  }
+}
+
+/* SECTIONS */
+section{
+  padding:120px 20px;
+  max-width:1200px;
+  margin:auto;
+}
+
+h2{
+  font-size:40px;
+  font-weight:700;
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.subtitle{
+  text-align:center;
+  max-width:760px;
+  margin:0 auto 70px;
+  color:var(--muted);
+  font-size:18px;
+}
+
+/* GRID CARDS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:var(--surface);
+  border-radius:var(--radius);
+  padding:40px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+  transition:.3s ease;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 40px rgba(0,0,0,0.08);
+}
+
+/* STEPS */
+.steps{
+  max-width:800px;
+  margin:auto;
+  display:grid;
+  gap:30px;
+}
+
+.step{
+  background:#fff;
+  border-radius:var(--radius);
+  padding:30px;
+  display:flex;
+  gap:20px;
+  align-items:flex-start;
+  box-shadow:0 8px 25px rgba(0,0,0,0.05);
+}
+
+.num{
+  width:42px;
+  height:42px;
+  background:#000;
+  color:#fff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:600;
+  font-size:14px;
+  flex-shrink:0;
+}
+
+/* REVIEWS */
+.reviews{
+  display:grid;
+  gap:30px;
+}
+
+@media(min-width:768px){
+  .reviews{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+
+.review{
+  background:#fff;
+  border-radius:var(--radius);
+  padding:36px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* FOOTER */
+footer{
+  background:#111;
+  color:#fff;
+  text-align:center;
+  padding:100px 20px;
+  margin-top:80px;
+}
+
+/* REVEAL ANIMATION */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all .8s ease;
+}
+.reveal.show{
+  opacity:1;
+  transform:none;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero h1{
+    font-size:42px;
+  }
+  h2{
+    font-size:30px;
+  }
+}
+</style>
+
+<!-- shop -->
+
+<style>
+:root{
+  --black:#111;
+  --red:#e63946;
+  --bg:#f5f5f6;
+  --surface:#ffffff;
+  --muted:#6f6f6f;
+  --radius:10px;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+
+
+/* TOPBAR */
+.topbar{
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 18px;
+  background:rgba(255,255,255,0.85);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid #eaeaea;
+  z-index:1000;
+}
+
+.brand{
+  font-size:18px;
+  font-weight:700;
+  letter-spacing:.3px;
+}
+
+.cart-btn{
+  position:relative;
+  padding:8px 14px;
+  cursor:pointer;
+  font-weight:600;
+  background:#fff;
+  border:1px solid #ddd;
+  border-radius:6px;
+  transition:.2s ease;
+}
+
+.cart-btn:hover{
+  background:#f2f2f2;
+}
+
+.cart-count{
+  position:absolute;
+  top:-6px;
+  right:-6px;
+  background:var(--red);
+  color:#fff;
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:11px;
+}
+
+/* MAIN */
+.main{
+  flex:1;
+  padding-top:85px;
+}
+
+/* SEARCH */
+.search-wrapper{
+  max-width:700px;
+  margin:15px auto;
+  padding:0 15px;
+  position:relative;
+}
+
+.search-box{
+  display:flex;
+  background:#fff;
+  border:1px solid #ddd;
+  border-radius:var(--radius);
+  overflow:hidden;
+}
+
+.search-box input{
+  flex:1;
+  padding:12px;
+  border:none;
+  outline:none;
+  font-size:14px;
+}
+
+.search-btn{
+  padding:0 18px;
+  background:#000;
+  color:#fff;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+  font-size:14px;
+  transition:.2s;
+}
+
+.search-btn:hover{
+  background:#333;
+}
+
+.suggestions{
+  position:absolute;
+  top:50px;
+  left:15px;
+  right:15px;
+  background:#fff;
+  border:1px solid #ddd;
+  border-radius:var(--radius);
+  box-shadow:0 8px 20px rgba(0,0,0,.06);
+  display:none;
+  max-height:200px;
+  overflow:auto;
+  z-index:999;
+}
+
+.suggestions div{
+  padding:10px 12px;
+  cursor:pointer;
+  font-size:13px;
+}
+
+.suggestions div:hover{
+  background:#f5f5f5;
+}
+
+/* CATEGORY */
+.filter-wrapper{
+  max-width:700px;
+  margin:10px auto 30px;
+  padding:0 15px;
+}
+
+.filter-wrapper select{
+  width:100%;
+  padding:12px;
+  border-radius:var(--radius);
+  border:1px solid #ddd;
+  background:#fff;
+  font-size:14px;
+  outline:none;
+}
+
+/* PRODUCTS */
+.products{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:18px;
+  padding:0 15px 60px;
+}
+
+.crd{
+  background:#fff;
+  border-radius:var(--radius);
+  padding:12px;
+  border:1px solid #eee;
+  transition:.25s ease;
+}
+
+.crd:hover{
+  box-shadow:0 8px 20px rgba(0,0,0,.06);
+}
+
+.crd img{
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  border-radius:6px;
+}
+
+.price{
+  font-weight:600;
+  margin:8px 0;
+  font-size:14px;
+}
+
+.qty{
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+
+.qty button{
+  width:28px;
+  height:28px;
+  border-radius:4px;
+  border:1px solid #ddd;
+  background:#fff;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.qty button:hover{
+  background:#f2f2f2;
+}
+
+.add{
+  margin-top:10px;
+  width:100%;
+  padding:10px;
+  border-radius:6px;
+  border:none;
+  background:#000;
+  color:#fff;
+  font-weight:600;
+  font-size:13px;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.add:hover{
+  background:#333;
+}
+
+/* LOADING SKELETON */
+.skeleton{
+  height:280px;
+  border-radius:var(--radius);
+  background:linear-gradient(90deg,#eee 25%,#ddd 50%,#eee 75%);
+  background-size:200% 100%;
+  animation:shimmer 1.2s infinite;
+}
+
+@keyframes shimmer{
+  0%{background-position:-200% 0}
+  100%{background-position:200% 0}
+}
+
+/* CART */
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.4);
+  display:none;
+}
+
+.overlay.active{display:block}
+
+.cart{
+  position:fixed;
+  right:-100%;
+  top:0;
+  width:100%;
+  max-width:360px;
+  height:100%;
+  background:#fff;
+  padding:20px;
+  overflow:auto;
+  transition:.35s ease;
+  z-index:1001;
+  box-shadow:-8px 0 25px rgba(0,0,0,.08);
+}
+
+.cart.active{
+  right:0;
+}
+
+.cart-header{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:15px;
+  font-weight:600;
+  font-size:16px;
+}
+
+.cart-item{
+  border-bottom:1px solid #eee;
+  padding:10px 0;
+  font-size:14px;
+}
+
+.remove{
+  color:#888;
+  cursor:pointer;
+  font-size:12px;
+}
+
+.checkout{
+  margin-top:15px;
+  width:100%;
+  padding:12px;
+  background:var(--red);
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  font-weight:600;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.checkout:hover{
+  opacity:.9;
+}
+
+.cart input,
+.cart textarea{
+  width:100%;
+  padding:10px;
+  border-radius:6px;
+  border:1px solid #ddd;
+  margin-top:8px;
+  font-size:13px;
+}
+
+/* POPUP */
+.popup{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#000;
+  color:#fff;
+  padding:10px 20px;
+  border-radius:20px;
+  display:none;
+  z-index:2000;
+  font-size:13px;
+}
+
+/* FOOTER */
+footer{
+  background:#111;
+  color:#fff;
+  text-align:center;
+  padding:50px 15px;
+  margin-top:auto;
+  font-size:14px;
+}
+
+/* ALERT */
+.manga-alert{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.5);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+
+.manga-box{
+  background:#fff;
+  padding:25px;
+  width:300px;
+  text-align:center;
+  border-radius:var(--radius);
+  box-shadow:0 15px 40px rgba(0,0,0,.15);
+  position:relative;
+  animation:pop .25s ease;
+}
+
+.manga-box h2{
+  font-size:18px;
+  margin-bottom:12px;
+  font-weight:600;
+}
+
+.manga-box button{
+  margin-top:15px;
+  padding:8px 18px;
+  border-radius:6px;
+  border:none;
+  background:#000;
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.manga-box button:hover{
+  background:#333;
+}
+
+.close-btn{
+  position:absolute;
+  right:10px;
+  top:8px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+@keyframes pop{
+  from{transform:scale(.8);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+
+/* DESKTOP */
+@media(min-width:768px){
+  .hero h1{font-size:34px}
+  .products{
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="topbar">
+<div class="brand">One Call Solutions</div>
+<div class="cart-btn" onclick="openCart()">🛒<div class="cart-count" id="count">0</div></div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-panel reveal show">
+    <h1>Your One-Call Solution<br>For Anything Local & Legal</h1>
+    <p>
+      One Call Solutions connects you with trusted local services through
+      one simple call.
+    </p>
+    <div class="business-number">☎️ +91 9229348120</div>
+    <div class="cta-wrap">
+      <a class="cta" href="tel:+919229348120">📞 Call Now</a>
+      <a class="cta primary" href="#shop">🛒 Shop Now</a>
+      <a class="cta" href="https://wa.me/919229348120">💬 WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section id="shop">
+
+<div class="main">
+  <h2 class="reveal">Our Store</h2>
+<div class="search-wrapper">
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="Search products or services..." oninput="showSuggestions()">
+<button class="search-btn" onclick="renderStore()">Search</button>
+</div>
+<div class="suggestions" id="suggestions"></div>
+</div>
+
+<div class="filter-wrapper">
+<select id="categoryFilter">
+<option value="All">All Categories</option>
+</select>
+</div>
+
+<div id="store"></div>
+</div>
+
+</section>
+
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+
+<div class="cart" id="cart">
+<div class="cart-header"><h2>Your Cart</h2><span onclick="closeCart()">✖</span></div>
+<div id="cartItems"></div>
+<h3>Total ₹<span id="total">0</span></h3>
+<p style="color:red;font-weight:900;">Minimum order amount ₹100</p>
+
+<input id="custName" placeholder="Your Name">
+<input id="custPhone" placeholder="Phone Number">
+<textarea id="custAddress" rows="3" placeholder="Full Address"></textarea>
+
+<button class="checkout" onclick="checkout()">Place Order</button>
+</div>
+
+<div class="popup" id="popup">Added to Cart ✅</div>
+
+<section id="services">
+  <h2 class="reveal">Services We Arrange</h2>
+  <div class="grid">
+    <div class="card reveal">🏠 Daily Needs</div>
+    <div class="card reveal">🍔 Food & Drinks</div>
+    <div class="card reveal">🚗 Rentals</div>
+    <div class="card reveal">🎉 Events</div>
+    <div class="card reveal">📦 Booking</div>
+    <div class="card reveal">📆 Monthly Services</div>
+  </div>
+</section>
+
+
+<section>
+  <h2 class="reveal">Why Choose Us</h2>
+ 
+  <div class="grid">
+    <div class="card reveal">💵 Free Handling</div>
+    <div class="card reveal">😊 Human Support</div>
+    <div class="card reveal">🛡 Trusted Network</div>
+    <div class="card reveal">⚡ Fast Execution</div>
+    <div class="card reveal">💰 Transparent Pricing</div>
+  </div>
+</section>
+
+<section>
+  <h2 class="reveal">How It Works</h2>
+  <div class="steps">
+    <div class="step reveal"><div class="num">1</div>Call or WhatsApp</div>
+    <div class="step reveal"><div class="num">2</div>Share Requirement</div>
+    <div class="step reveal"><div class="num">3</div>Confirm Price</div>
+    <div class="step reveal"><div class="num">4</div>Service Delivered</div>
+  </div>
+</section>
+
+
+<section>
+  <h2 class="reveal">Customer Reviews</h2>
+  <div class="reviews">
+    <div class="review reveal">⭐⭐⭐⭐⭐<br>Fast & reliable</div>
+    <div class="review reveal">⭐⭐⭐⭐<br>Saved my time</div>
+    <div class="review reveal">⭐⭐⭐⭐⭐<br>Very helpful</div>
+  </div>
+</section>
+
+
+<footer>
+  <h2>One Call Solutions</h2>
+  <p>Everything-on-Demand · Teghra</p>
+  <small>© 2026 zer0</small>
+</footer>
+
+<!-- EmailJS Library -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+<script>
+  emailjs.init("Zuxy6x2TZlxuZ4ABj");
+</script>
+
+<script>
+let cart=[],quantities={};
+const MIN_ORDER = 100;
+
+const categorySelect=document.getElementById("categoryFilter");
+[...new Set(products.map(p=>p.cat))].forEach(cat=>{
+categorySelect.innerHTML+=`<option value="${cat}">${cat}</option>`
+});
+
+function showMangaAlert(title,message){
+  document.getElementById("mangaTitle").innerText=title;
+  document.getElementById("mangaMessage").innerText=message;
+  document.getElementById("mangaAlert").style.display="flex";
+}
+
+function closeMangaAlert(){
+  document.getElementById("mangaAlert").style.display="none";
+}
+
+function showSkeleton(){
+document.getElementById("store").innerHTML='<div class="products">'+Array(6).fill('<div class="skeleton"></div>').join('')+'</div>';
+}
+
+function renderStore(){
+const search=document.getElementById("searchInput").value.toLowerCase();
+if(!search)return;
+showSkeleton();
+setTimeout(()=>{
+const selected=categorySelect.value;
+const filtered=products.filter(p=>p.name.toLowerCase().includes(search)&&(selected==="All"||p.cat===selected));
+document.getElementById("store").innerHTML='<div class="products">'+
+filtered.map(p=>`
+<div class="crd">
+<img src="${p.img}" loading="lazy">
+<h4>${p.name}</h4>
+<div class="price">₹${p.price}</div>
+<div class="qty">
+<button onclick="changeQty(${p.id},-1)">-</button>
+<span>${quantities[p.id]||1}</span>
+<button onclick="changeQty(${p.id},1)">+</button>
+</div>
+<button class="add" onclick="addToCart(${p.id})">Add to Cart</button>
+</div>`).join('')+'</div>';
+},500);
+}
+
+function showSuggestions(){
+const val=document.getElementById("searchInput").value.toLowerCase();
+const box=document.getElementById("suggestions");
+if(!val){box.style.display="none";return;}
+const matches=products.filter(p=>p.name.toLowerCase().includes(val)).slice(0,5);
+box.innerHTML=matches.map(m=>`<div onclick="selectSuggestion('${m.name}')">${m.name}</div>`).join('');
+box.style.display="block";
+}
+
+function selectSuggestion(name){
+document.getElementById("searchInput").value=name;
+document.getElementById("suggestions").style.display="none";
+renderStore();
+}
+
+function changeQty(id,val){
+quantities[id]=(quantities[id]||1)+val;
+if(quantities[id]<1)quantities[id]=1;
+renderStore();
+}
+
+function addToCart(id){
+const product=products.find(p=>p.id===id);
+const qty=quantities[id]||1;
+const exist=cart.find(i=>i.id===id);
+if(exist)exist.qty+=qty;else cart.push({...product,qty});
+quantities[id]=1;
+updateCart();
+showPopup();
+}
+
+function updateCart(){
+let total=0;
+document.getElementById("cartItems").innerHTML=cart.map((c,i)=>{
+total+=c.price*c.qty;
+return `<div class="cart-item">
+<strong>${c.name}</strong><br>
+₹${c.price} x ${c.qty} = ₹${c.price*c.qty}
+<div class="qty">
+<button onclick="cartQty(${i},-1)">-</button>
+<span>${c.qty}</span>
+<button onclick="cartQty(${i},1)">+</button>
+</div>
+<div class="remove" onclick="removeItem(${i})">Remove</div>
+</div>`;
+}).join('');
+document.getElementById("total").innerText=total;
+document.getElementById("count").innerText=cart.length;
+}
+
+function cartQty(i,val){cart[i].qty+=val;if(cart[i].qty<1)cart[i].qty=1;updateCart()}
+function removeItem(i){cart.splice(i,1);updateCart()}
+
+function openCart(){document.getElementById("cart").classList.add("active");document.getElementById("overlay").classList.add("active")}
+function closeCart(){document.getElementById("cart").classList.remove("active");document.getElementById("overlay").classList.remove("active")}
+
+function checkout(){
+if(!cart.length)return alert("Cart empty");
+
+let total=cart.reduce((s,i)=>s+i.price*i.qty,0);
+
+if(total < MIN_ORDER){
+alert("Minimum order amount is ₹100");
+return;
+}
+
+const name=document.getElementById("custName").value;
+const phone=document.getElementById("custPhone").value;
+const addr=document.getElementById("custAddress").value;
+if(!name||!phone||!addr)return alert("Fill all details");
+
+let msg=`Hello,%0AName:${name}%0APhone:${phone}%0AAddress:${addr}%0AOrder:%0A`;
+cart.forEach(c=>msg+=`- ${c.name} x ${c.qty} = ₹${c.price*c.qty}%0A`);
+msg+=`Total ₹${total}`;
+
+emailjs.send("service_z1uzh6f","template_whed5zh",{email: msg}).then(()=>showMangaAlert("ORDER SUCCESS!", "Your order is placed successfully! We will contact you shortly."));
+}
+
+function showPopup(){
+const p=document.getElementById("popup");
+p.style.display="block";
+setTimeout(()=>p.style.display="none",1500);
+}
+
+/* Reveal */
+const reveals=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver(e=>{
+  e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('show')});
+},{threshold:.15});
+reveals.forEach(r=>observer.observe(r));
+
+</script>
+
+<div id="mangaAlert" class="manga-alert">
+  <div class="manga-box">
+    <span class="close-btn" onclick="closeMangaAlert()">✖</span>
+    <h2 id="mangaTitle">SUCCESS!</h2>
+    <p id="mangaMessage"></p>
+    <button onclick="closeMangaAlert()">OK</button>
+  </div>
+</div>
+
+</body>
+</html>
